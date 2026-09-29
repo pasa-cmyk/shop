@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  var supportEmail = 'support@example.com', reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var supportEmail = 'support@bjpack.net', reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var qs = function (s, c) { return (c || document).querySelector(s); }, qsa = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
   function categoryName(c) { return { landings: 'Landings', portfolios: 'Portfolios', stores: 'Online Stores', saas: 'SaaS' }[c] || c; }
   function initHeader() { var h = qs('#siteHeader'); if (!h) return; var update = function () { h.classList.toggle('is-scrolled', window.scrollY > 8); }; update(); window.addEventListener('scroll', update, { passive: true }); }

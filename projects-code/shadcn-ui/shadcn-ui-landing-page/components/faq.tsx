@@ -36,7 +36,7 @@ const faq = [
   {
     question: "How can I contact customer support?",
     answer:
-      "You can reach our support team via email at support@example.com or through the live chat on our website. We're available 24/7 to assist you.",
+      "You can reach our support team via email at support@bjpack.net or through the live chat on our website. We're available 24/7 to assist you.",
   },
 ];
 
