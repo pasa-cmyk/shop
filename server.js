@@ -46,7 +46,8 @@ async function purchase(req, res) {
 
 const server = http.createServer((req, res) => {
   if (req.method === 'POST' && req.url === '/api/purchase') return purchase(req, res);
-  const route = req.url.split('?')[0];
+  let route;
+  try { route = decodeURIComponent(req.url.split('?')[0]); } catch (error) { return send(res, 400, 'Invalid URL', 'text/plain; charset=utf-8'); }
   const prettyRoutes = { '/': '/index.html', '/home': '/index.html', '/templates': '/index.html', '/privacy': '/privacy.html', '/terms': '/terms.html', '/refunds': '/refunds.html' };
   const productRoute = route.match(/^\/product\/([a-z0-9-]+)$/);
   const requested = productRoute ? '/product.html' : (prettyRoutes[route] || route);
