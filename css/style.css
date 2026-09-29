@@ -112,14 +112,14 @@ html { scroll-behavior: smooth; width:100%; max-width:100%; overflow-x:hidden; }
 .included ul { color:var(--muted); padding-left:1.1rem; font-size:.86rem; }
 .modal[hidden] { display:none; }
 .modal { position:fixed; inset:0; z-index:2000; display:grid; place-items:center; padding:1rem; background:rgba(8,8,9,.84); }
-.modal-card { max-width:440px; padding:2rem; background:var(--surface); border:1px solid var(--line); box-shadow:0 20px 60px rgba(0,0,0,.5); }
+.modal-card { width:min(100%,440px); max-width:440px; padding:2rem; background:var(--surface); border:1px solid var(--line); box-shadow:0 20px 60px rgba(0,0,0,.5); }
 .modal-card h2 { font-size:1.35rem; margin-bottom:.8rem; }.modal-card p { color:var(--muted); font-size:.9rem; }
 .modal-close { float:right; border:0; background:none; color:var(--muted); font-size:1.4rem; cursor:pointer; }
-.purchase-form { display:grid; gap:.65rem; margin-top:1.4rem; }
+.purchase-form { display:grid; grid-template-columns:1fr; gap:.65rem; margin-top:1.4rem; width:100%; }
 .purchase-form label { color:var(--muted); font: .7rem var(--font-mono); text-transform:uppercase; letter-spacing:.08em; }
-.purchase-form input { width:100%; padding:.8rem .9rem; color:var(--text); background:var(--bg); border:1px solid var(--line); border-radius:var(--radius); font: .9rem var(--font-sans); }
+.purchase-form input { display:block; grid-column:1 / -1; width:100%; min-width:0; height:46px; padding:.8rem .9rem; color:var(--text); background:var(--bg); border:1px solid var(--line); border-radius:var(--radius); font: .9rem var(--font-sans); }
 .purchase-form input:focus { outline:2px solid var(--accent); outline-offset:2px; border-color:var(--accent); }
-.purchase-form .btn-accent { justify-content:center; border:0; cursor:pointer; margin-top:.35rem; }
+.purchase-form .btn-accent { width:100%; justify-content:center; border:0; cursor:pointer; margin-top:.35rem; }
 .purchase-form .btn-accent:disabled { opacity:.6; cursor:wait; }
 .form-status { min-height:1.2rem; color:var(--accent-hi); font-size:.8rem; margin:0; }
 @media (max-width:767.98px) { .nav-links { gap:.8rem; }.product-grid { grid-template-columns:repeat(2,1fr); gap:2rem .75rem; }.footer-inner { grid-template-columns:1fr 1fr; }.product-layout { grid-template-columns:1fr; }.product-aside { order:-1; } }
